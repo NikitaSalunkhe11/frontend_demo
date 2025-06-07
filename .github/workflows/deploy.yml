@@ -28,6 +28,7 @@ jobs:
                       # FRONTEND DEPLOYMENT
                       cd /home/ubuntu/frontend
                       git pull origin main
+                      sudo fuser -k 80/tcp || true
                       sudo docker stop frontend || true
                       sudo docker rm frontend || true
                       sudo docker build -t frontend:latest .
