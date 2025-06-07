@@ -26,9 +26,9 @@ jobs:
                   script: |
                      
                       # FRONTEND DEPLOYMENT
-                      cd /home/ubuntu/react-app
+                      cd /home/ubuntu/frontend
                       git pull origin main
-                      sudo docker stop react-app || true
-                      sudo docker rm react-app || true
+                      sudo docker stop frontend || true
+                      sudo docker rm frontend || true
                       sudo docker build -t react-app:latest .
-                      sudo docker run -d --name react-app -p 80:80  react-app:latest
+                      sudo docker run -d --name react-app -p 80:80 react-app:latest
